@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanoifume - The Essence of Elegance</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo"><li><a href="">Hanoifume</a></li></div>
+        <nav>
+            <ul>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <button>Search</button>
+                </div>
+                <li><a href="/category">Category</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Slider -->
+    <section class="slider">
+        <div class="slides">
+            <div class="slide">
+                <img src="/images/slide1.jpg" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="/images/slide2.jpg" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="/images/slide3.jpg" alt="Slide 3">
+            </div>
+        </div>
+
+        <!-- Tab Navigation (Hidden Inside Slider) -->
+        <div class="tab">
+            <button class="tablinks" onclick="openImage(event, 0)">1</button>
+            <button class="tablinks" onclick="openImage(event, 1)">2</button>
+            <button class="tablinks" onclick="openImage(event, 2)">3</button>
+        </div>
+    </section>
+
+    <!-- Best Sellers Section -->
+    <section class="best-sellers">
+        <h2>Best Sellers</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="/images/best1.jpg" alt="Best Seller 1">
+                <h3>Chanel No. 5</h3>
+                <p>$150</p>
+            </div>
+            <div class="product-card">
+                <img src="/images/best2.jpg" alt="Best Seller 2">
+                <h3>Dior Sauvage</h3>
+                <p>$120</p>
+            </div>
+            <div class="product-card">
+                <img src="/images/best3.jpg" alt="Best Seller 3">
+                <h3>Gucci Bloom</h3>
+                <p>$110</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section class="new-arrivals">
+        <h2>New Arrivals</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="/images/new1.jpg" alt="New Arrival 1">
+                <h3>YSL Libre</h3>
+                <p>$140</p>
+            </div>
+            <div class="product-card">
+                <img src="/images/new2.jpg" alt="New Arrival 2">
+                <h3>Tom Ford Oud</h3>
+                <p>$180</p>
+            </div>
+            <div class="product-card">
+                <img src="/images/new3.jpg" alt="New Arrival 3">
+                <h3>Versace Eros</h3>
+                <p>$130</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: support@hanoifume.com | Phone: +84 123 456 789</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Hanoifume. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        function openImage(event, index) {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[index].style.display = "block";
+            slideIndex = index + 1;
+        }
+    </script>
+
+</body>
+</html>

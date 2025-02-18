@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanoifume - The Essence of Elegance</title>
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo"><li><a href="/">Hanoifume</a></li></div>
+        <nav>
+            <ul>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <button>Search</button>
+                </div>
+                <li><a href="/category">Category</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Profile Section -->
+    <section class="profile">
+        <h2>Profile</h2>
+        <div class="user-info">
+            <p><strong>Name:</strong> <%= user.username %></p>
+            <p><strong>Email:</strong> <%= user.email %></p>
+            <p><strong>Joined:</strong> <%= user.created_at %></p>
+        </div>
+</body>
+</html>
