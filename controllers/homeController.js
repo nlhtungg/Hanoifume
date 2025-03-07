@@ -1,10 +1,12 @@
 const User = require('../models/user');
+const Product = require('../models/product');
 
-const getHomePage = (req, res) => {
+const getHomePage = async(req, res) => {
     if(!req.user) {
-        return res.redirect('/');
+        return res.render('landing');
     }
-    res.render('home', { user: req.user });
+    const bestSellers = await Product.getBestSellers(5);
+    res.render('home', { user: req.user, bestSellers});
 };
 
 const logout = (req, res) => {
@@ -21,4 +23,10 @@ const getProfilePage = async(req, res) => {
     res.render('profile', { user });
 }
 
-module.exports = { getHomePage, logout, getCartPage, getProfilePage };
+module.exports = 
+{   
+    getHomePage, 
+    logout, 
+    getCartPage, 
+    getProfilePage 
+};

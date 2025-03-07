@@ -2,15 +2,10 @@ const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authController');
 const { checkAuth } = require('../middlewares/authMiddleware'); // Ensure correct import
+const homeController = require('../controllers/homeController');
 
 // Handle '/' based on login status
-router.get('/', checkAuth, (req, res) => {
-    console.log(req.user); 
-    if (req.user) {
-        return res.render('home'); // If logged in, show home page
-    }
-    return res.render('landing'); // If not logged in, show landing page
-});
+router.get('/', checkAuth, homeController.getHomePage);
 
 // Authentication routes
 router.get('/login', authController.getLoginPage);

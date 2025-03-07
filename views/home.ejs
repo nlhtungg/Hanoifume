@@ -51,21 +51,13 @@
     <section class="best-sellers">
         <h2>Best Sellers</h2>
         <div class="product-grid">
-            <div class="product-card">
-                <img src="/images/best1.jpg" alt="Best Seller 1">
-                <h3>Chanel No. 5</h3>
-                <p>$150</p>
-            </div>
-            <div class="product-card">
-                <img src="/images/best2.jpg" alt="Best Seller 2">
-                <h3>Dior Sauvage</h3>
-                <p>$120</p>
-            </div>
-            <div class="product-card">
-                <img src="/images/best3.jpg" alt="Best Seller 3">
-                <h3>Gucci Bloom</h3>
-                <p>$110</p>
-            </div>
+            <% bestSellers.forEach(bestSeller => { %>
+                <div class="product-card">
+                    <img src="<%= bestSeller.image_url %>" alt="<%= bestSeller.name %>">
+                    <h3><%= bestSeller.name %></h3>
+                    <p>$<%= bestSeller.price %></p>
+                </div>
+            <% }) %>
         </div>
     </section>
 
